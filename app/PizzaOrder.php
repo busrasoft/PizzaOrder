@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pizza extends Model
+class PizzaOrder extends Model
 {
     protected $fillable = [
-        'flavorPizza', 'numberPizza', 'sizePizza',
+        'pizza_id', 'user_id',
     ];
 }

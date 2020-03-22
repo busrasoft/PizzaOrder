@@ -8,13 +8,28 @@ use Illuminate\Http\Request;
 class PizzaController extends Controller
 {
     /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        // $this->middleware('log')->only('index');
+        // $this->middleware('subscribed')->except('store');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $pizzas = Pizza::latest()->paginate(5);
+
+        return view('pizzas.index',compact('pizzas'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +39,7 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pizzas.create'); 
     }
 
     /**
@@ -35,7 +50,15 @@ class PizzaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'flavorPizza' => 'required',
+            'numberPizza' => 'required',
+            'sizePizza' => 'required',
+        ]);
+
+        Pizza::create($request->all());
+        return redirect()->route('pizzas.index')
+        ->with('success','Pizza created successfully.');
     }
 
     /**
@@ -46,7 +69,7 @@ class PizzaController extends Controller
      */
     public function show(Pizza $pizza)
     {
-        //
+        return view('pizzas.show',compact('pizza'));
     }
 
     /**
@@ -57,7 +80,7 @@ class PizzaController extends Controller
      */
     public function edit(Pizza $pizza)
     {
-        //
+        return view('pizzas.edit',compact('pizza'));
     }
 
     /**
@@ -69,7 +92,15 @@ class PizzaController extends Controller
      */
     public function update(Request $request, Pizza $pizza)
     {
-        //
+        $request->validate([
+            'flavorPizza' => 'required',
+            'numberPizza' => 'required',
+            'sizePizza' => 'required',
+        ]);
+
+        $pizza->update($request->all());
+        return redirect()->route('pizzas.index')
+        ->with('success','Pizza created successfully.');
     }
 
     /**
@@ -80,6 +111,8 @@ class PizzaController extends Controller
      */
     public function destroy(Pizza $pizza)
     {
-        //
+        $pizza->delete();
+        return redirect()->route('pizzas.index')
+        ->with('success','Pizza deleted successfully');
     }
 }
