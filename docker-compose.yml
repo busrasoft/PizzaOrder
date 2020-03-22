@@ -1,0 +1,41 @@
+version: '2.3'
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3356:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: orderpizza
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    depends_on:
+      - mysqldb
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8282:80
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    # PMA_HOST: mysqldb
+
+  web:
+    container_name: web
+    domainname: hello.me.com
+    tty: true
+    image: bitnami/laravel:7-debian-9
+    ports:
+      - 8181:8181
+    depends_on:
+      - mysqldb
+    env_file:
+      - .dockerenv
+    volumes:
+      - ./:/app
+    command: bash -c 'php artisan serve --host 0.0.0.0:8181'
