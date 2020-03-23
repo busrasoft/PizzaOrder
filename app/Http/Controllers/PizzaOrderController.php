@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\PizzaOrder;
 use Illuminate\Http\Request;
+use App\Pizza;
 
 class PizzaOrderController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,10 @@ class PizzaOrderController extends Controller
      */
     public function index()
     {
-        //
+        $pizzaOrders = PizzaOrder::latest()->paginate(5);
+
+        return view('pizzaOrders.index',compact('pizzaOrders'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +37,7 @@ class PizzaOrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('pizzaOrders.create'); 
     }
 
     /**
@@ -35,7 +48,20 @@ class PizzaOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'flavorPizza' => 'required',
+            'numberPizza' => 'required',
+            'sizePizza' => 'required',
+            'status' => 'required',
+            'email' => 'required',
+            'customerName' => 'required',
+            'customerPhone' => 'required',
+            'customerAddress' => 'required',
+        ]);
+
+        PizzaOrder::create($request->all());
+        return redirect()->route('pizzaOrders.index')
+        ->with('success','Pizza order created successfully.');
     }
 
     /**
@@ -46,7 +72,7 @@ class PizzaOrderController extends Controller
      */
     public function show(PizzaOrder $pizzaOrder)
     {
-        //
+        return view('pizzaOrders.show',compact('pizzaOrder'));
     }
 
     /**
@@ -57,7 +83,7 @@ class PizzaOrderController extends Controller
      */
     public function edit(PizzaOrder $pizzaOrder)
     {
-        //
+        return view('pizzaOrders.edit',compact('pizzaOrder'));
     }
 
     /**
@@ -69,7 +95,20 @@ class PizzaOrderController extends Controller
      */
     public function update(Request $request, PizzaOrder $pizzaOrder)
     {
-        //
+        $request->validate([
+            'flavorPizza' => 'required',
+            'numberPizza' => 'required',
+            'sizePizza' => 'required',
+            'status' => 'required',
+            'email' => 'required',
+            'customerName' => 'required',
+            'customerPhone' => 'required',
+            'customerAddress' => 'required',
+        ]);
+
+        $pizzaOrder->update($request->all());
+        return redirect()->route('pizzaOrders.index')
+        ->with('success','Pizza order created successfully.');
     }
 
     /**
@@ -80,6 +119,8 @@ class PizzaOrderController extends Controller
      */
     public function destroy(PizzaOrder $pizzaOrder)
     {
-        //
+        $pizzaOrder->delete();
+        return redirect()->route('pizzaOrders.index')
+        ->with('success','Pizza order deleted successfully');
     }
 }
