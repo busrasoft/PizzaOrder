@@ -7,7 +7,7 @@
                 <h2>Laravel 7 CRUD Pizza</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('pizzas.create') }}"> Create New pizza</a>
+                <a class="btn btn-success" href="{{ route('pizzaSizes.create') }}"> Create New Pizza Size</a>
             </div>
         </div>
     </div>
@@ -21,23 +21,19 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Pizza Flavor</th>
-            <th>Pizza Number</th>
             <th>Pizza Size</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($pizzas as $pizza)
+        @foreach ($pizzaSize as $pizza)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $pizza->flavorPizza }}</td>
-            <td>{{ $pizza->numberPizza }}</td>
-            <td>{{ $pizza->sizePizza }}</td>
+            <td>{{ $sizePizza->sizePizza }}</td>
             <td>
-                <form action="{{ route('pizzas.destroy',$pizza->id) }}" method="POST">
+                <form action="{{ route('pizzaSizes.destroy',$sizePizza->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('pizzas.show',$pizza->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('pizzaSizes.show',$sizePizza->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('pizzas.edit',$pizza->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('pizzaSizes.edit',$sizePizza->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
@@ -49,6 +45,6 @@
         @endforeach
     </table>
   
-    {!! $pizzas->links() !!}
+    {!! $pizzaSize->links() !!}
       
 @endsection

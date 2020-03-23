@@ -1,4 +1,4 @@
-@extends('pizzaOrders.layout')
+@extends('layouts.app')
   
 @section('content')
 <div class="row">
@@ -22,6 +22,8 @@
         </ul>
     </div>
 @endif
+
+
    
 <form action="{{ route('pizzaOrders.store') }}" method="POST">
     @csrf
@@ -31,6 +33,17 @@
             <div class="form-group">
                 <strong>Pizza Flavor:</strong>
                 <input type="text" name="flavorPizza" class="form-control" placeholder="flavorPizza">
+                <!-- Example single danger button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action
+    </button>
+    <div class="dropdown-menu">
+        @foreach($pizzas as $pizza)                            
+            <li><a class="dropdown-item" href="#">{{$pizza->flavorPizza}}</a></li>
+        @endforeach
+    </div>
+  </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -79,6 +92,8 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
-   
+ 
 </form>
+
+
 @endsection

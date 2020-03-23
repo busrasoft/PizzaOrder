@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('pizzas', 'PizzaController');
 Route::resource('pizzaOrders', 'PizzaOrderController');
+Route::resource('pizzaSizes', 'PizzaSizeController');

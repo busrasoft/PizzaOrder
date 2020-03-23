@@ -1,4 +1,4 @@
-@extends('pizzas.layout')
+@extends('layouts.app')
   
 @section('content')
 <div class="row">
@@ -42,8 +42,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                <input type="text" name="sizePizza" class="form-control" placeholder="Size of Pizza">
+                <select class="form-control">
+                    @foreach ($pizzas as $pizza)
+                <option value="{{ $pizza->id }}">{{ $pizza-> }}</option>
+                    @endforeach
+                </select>
             </div>
+            <!-- Example single danger button -->
+
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

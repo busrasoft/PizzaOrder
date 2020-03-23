@@ -24,8 +24,7 @@ class PizzaOrderController extends Controller
      */
     public function index()
     {
-        $pizzaOrders = PizzaOrder::latest()->paginate(5);
-
+        $pizzaOrders = PizzaOrder::paginate(5);
         return view('pizzaOrders.index',compact('pizzaOrders'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -37,7 +36,9 @@ class PizzaOrderController extends Controller
      */
     public function create()
     {
-        return view('pizzaOrders.create'); 
+        $pizza = Pizza::get();
+        return view('pizzaOrders.create')
+        ->with('pizzas', $pizza); 
     }
 
     /**

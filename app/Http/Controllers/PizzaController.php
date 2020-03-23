@@ -39,7 +39,8 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        return view('pizzas.create'); 
+        $pizza = Pizza::get();
+        return view('pizzas.create') ->with('pizzas', $pizza); 
     }
 
     /**
