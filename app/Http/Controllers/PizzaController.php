@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pizza;
+use App\PizzaSize;
 use Illuminate\Http\Request;
 
 class PizzaController extends Controller
@@ -39,8 +40,9 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        $pizza = Pizza::get();
-        return view('pizzas.create') ->with('pizzas', $pizza); 
+        $pizzaSize = PizzaSize::get();
+        return view('pizzas.create')
+        ->with('pizzaSizes', $pizzaSize); 
     }
 
     /**

@@ -45,6 +45,6 @@
         @endforeach
     </table>
   
-    {!! $pizzaSize->links() !!}
+    {!! $pizzaSizes->links() !!}
       
 @endsection

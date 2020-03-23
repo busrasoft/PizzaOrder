@@ -42,9 +42,9 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                <select class="form-control">
-                    @foreach ($pizzas as $pizza)
-                <option value="{{ $pizza->id }}">{{ $pizza-> }}</option>
+                <select name="pizzaSize" class="form-control">
+                    @foreach ($pizzaSizes as $pizzaSize)
+                        <option value="{{ $pizzaSize->pizzaSize }}">{{ $pizzaSize->pizzaSize}}</option>
                     @endforeach
                 </select>
             </div>

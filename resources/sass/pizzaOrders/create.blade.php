@@ -22,6 +22,8 @@
         </ul>
     </div>
 @endif
+
+
    
 <form action="{{ route('pizzaOrders.store') }}" method="POST">
     @csrf
@@ -30,11 +32,18 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Flavor:</strong>
-    <select name="pizzaFlavor" class="form-control">
+                <input type="text" name="pizzaFlavor" class="form-control" placeholder="pizzaFlavor">
+                <!-- Example single danger button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action
+    </button>
+    <div class="dropdown-menu">
         @foreach($pizzas as $pizza)                            
-            <option>{{$pizza->pizzaFlavor}}</option>
+            <li><a class="dropdown-item" href="#">{{$pizza->pizzaFlavor}}</a></li>
         @endforeach
-    </select>
+    </div>
+  </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -52,19 +61,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Status:</strong>
-            <label>
-                {{ App\Enums\Status::DELEVIRY }}
-                <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::DELEVIRY }}">
-            </label>
-            <label>
-                {{ App\Enums\Status::DISPATCHED }}
-                <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::DISPATCHED }}">
-            </label>
-            <label>
-                {{ App\Enums\Status::CANCELED }}
-                <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::CANCELED }}">
-            </label>
-    </div>
+                <input type="text" name="status" class="form-control" placeholder="Status of Pizza">
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
