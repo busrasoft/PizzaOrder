@@ -29,9 +29,9 @@
         @foreach ($pizzas as $pizza)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $pizza->flavorPizza }}</td>
-            <td>{{ $pizza->numberPizza }}</td>
-            <td>{{ $pizza->sizePizza }}</td>
+            <td>{{ $pizza->pizzaFlavor }}</td>
+            <td>{{ $pizza->pizzaNumber }}</td>
+            <td>{{ $pizza->pizzaSize }}</td>
             <td>
                 <form action="{{ route('pizzas.destroy',$pizza->id) }}" method="POST">
    

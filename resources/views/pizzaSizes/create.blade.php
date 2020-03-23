@@ -30,7 +30,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                <input type="text" name="sizePizza" class="form-control" placeholder="sizePizza">
+                <input type="text" name="pizzaSize" class="form-control" placeholder="pizzaSize">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

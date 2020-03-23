@@ -24,16 +24,16 @@
             <th>Pizza Size</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($pizzaSize as $pizza)
+        @foreach ($pizzaSizes as $pizzaSize)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $sizePizza->sizePizza }}</td>
+            <td>{{ $pizzaSize->pizzaSize }}</td>
             <td>
-                <form action="{{ route('pizzaSizes.destroy',$sizePizza->id) }}" method="POST">
+                <form action="{{ route('pizzaSizes.destroy',$pizzaSize->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('pizzaSizes.show',$sizePizza->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('pizzaSizes.show',$pizzaSize->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('pizzaSizes.edit',$sizePizza->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('pizzaSizes.edit',$pizzaSize->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')

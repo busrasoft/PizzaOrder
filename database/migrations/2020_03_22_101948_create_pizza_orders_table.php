@@ -17,9 +17,9 @@ class CreatePizzaOrdersTable extends Migration
             $table->id();
             $table->foreignId('pizza_id')->constrain()->nullable();
             $table->foreignId('user_id')->constrain()->nullable();
-            $table->string('flavorPizza')->nullable();
-            $table->integer('numberPizza')->nullable();
-            $table->string('sizePizza')->nullable();
+            $table->string('pizzaFlavor')->nullable();
+            $table->integer('pizzaNumber')->nullable();
+            $table->string('pizzaSize')->nullable();
             $table->string('status')->nullable();
             $table->string('email')->nullable();
             $table->string('customerName')->nullable();

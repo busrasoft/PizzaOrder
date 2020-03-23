@@ -34,9 +34,9 @@
         @foreach ($pizzaOrders as $pizza)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $pizza->flavorPizza }}</td>
-            <td>{{ $pizza->numberPizza }}</td>
-            <td>{{ $pizza->sizePizza }}</td>
+            <td>{{ $pizza->pizzaFlavor }}</td>
+            <td>{{ $pizza->pizzaNumber }}</td>
+            <td>{{ $pizza->pizzaSize }}</td>
             <td>{{ $pizza->status }}</td>
             <td>{{ $pizza->email }}</td>
             <td>{{ $pizza->customerName }}</td>

@@ -52,9 +52,9 @@ class PizzaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'flavorPizza' => 'required',
-            'numberPizza' => 'required',
-            'sizePizza' => 'required',
+            'pizzaFlavor' => 'required',
+            'pizzaNumber' => 'required',
+            'pizzaSize' => 'required',
         ]);
 
         Pizza::create($request->all());
@@ -94,9 +94,9 @@ class PizzaController extends Controller
     public function update(Request $request, Pizza $pizza)
     {
         $request->validate([
-            'flavorPizza' => 'required',
-            'numberPizza' => 'required',
-            'sizePizza' => 'required',
+            'pizzaFlavor' => 'required',
+            'pizzaNumber' => 'required',
+            'pizzaSize' => 'required',
         ]);
 
         $pizza->update($request->all());

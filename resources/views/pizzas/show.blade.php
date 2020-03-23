@@ -15,19 +15,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Flavor:</strong>
-                {{ $pizza->flavorPizza }}
+                {{ $pizza->pizzaFlavor }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Number:</strong>
-                {{ $pizza->numberPizza }}
+                {{ $pizza->pizzaNumber }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                {{ $pizza->sizePizza }}
+                {{ $pizza->pizzaSize }}
             </div>
         </div>
     </div>

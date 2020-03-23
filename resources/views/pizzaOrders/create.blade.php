@@ -32,7 +32,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Flavor:</strong>
-                <input type="text" name="flavorPizza" class="form-control" placeholder="flavorPizza">
+                <input type="text" name="pizzaFlavor" class="form-control" placeholder="pizzaFlavor">
                 <!-- Example single danger button -->
 <div class="btn-group">
     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,7 +40,7 @@
     </button>
     <div class="dropdown-menu">
         @foreach($pizzas as $pizza)                            
-            <li><a class="dropdown-item" href="#">{{$pizza->flavorPizza}}</a></li>
+            <li><a class="dropdown-item" href="#">{{$pizza->pizzaFlavor}}</a></li>
         @endforeach
     </div>
   </div>
@@ -49,13 +49,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Number:</strong>
-                <input type="text" name="numberPizza" class="form-control" placeholder="Number of Pizza">
+                <input type="text" name="pizzaNumber" class="form-control" placeholder="Number of Pizza">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                <input type="text" name="sizePizza" class="form-control" placeholder="Size of Pizza">
+                <input type="text" name="pizzaSize" class="form-control" placeholder="Size of Pizza">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -30,13 +30,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Flavor:</strong>
-                <input type="text" name="flavorPizza" class="form-control" placeholder="flavorPizza">
+                <input type="text" name="pizzaFlavor" class="form-control" placeholder="pizzaFlavor">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Number:</strong>
-                <input type="text" name="numberPizza" class="form-control" placeholder="Number of Pizza">
+                <input type="text" name="pizzaNumber" class="form-control" placeholder="Number of Pizza">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

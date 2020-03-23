@@ -15,7 +15,7 @@ class CreatePizzaSizesTable extends Migration
     {
         Schema::create('pizza_Sizes', function (Blueprint $table) {
             $table->id();
-            $table->string('sizePizza');
+            $table->string('pizzaSize');
             $table->timestamps();
         });
     }

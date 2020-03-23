@@ -23,8 +23,8 @@ class PizzaSizeController extends Controller
      */
     public function index()
     {
-        $pizzaSize = PizzaSize::latest()->paginate(5);
-        return view('pizzaSizes.index', compact('pizzaSize'))
+        $pizzaSizes = PizzaSize::latest()->paginate(5);
+        return view('pizzaSizes.index', compact('pizzaSizes'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

@@ -31,19 +31,19 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Flavor:</strong>
-                    <input type="text" name="flavorPizza" value="{{ $pizzaOrder->flavorPizza }}" class="form-control" placeholder="Pizza Flavor">
+                    <input type="text" name="pizzaFlavor" value="{{ $pizzaOrder->pizzaFlavor }}" class="form-control" placeholder="Pizza Flavor">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Number:</strong>
-                    <input type="text" name="numberPizza" value="{{ $pizzaOrder->numberPizza }}" class="form-control" placeholder="Pizza Number">
+                    <input type="text" name="pizzaNumber" value="{{ $pizzaOrder->pizzaNumber }}" class="form-control" placeholder="Pizza Number">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Size:</strong>
-                    <input type="text" name="sizePizza" value="{{ $pizzaOrder->sizePizza }}" class="form-control" placeholder="Pizza Size">
+                    <input type="text" name="pizzaSize" value="{{ $pizzaOrder->pizzaSize }}" class="form-control" placeholder="Pizza Size">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
