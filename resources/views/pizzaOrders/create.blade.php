@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-   
+  
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -25,48 +25,51 @@
    
 <form action="{{ route('pizzaOrders.store') }}" method="POST">
     @csrf
-  
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Flavor:</strong>
-    <select name="pizzaFlavor" class="form-control">
-        @foreach($pizzas as $pizza)                            
-            <option>{{$pizza->pizzaFlavor}}</option>
-        @endforeach
-    </select>
+                <strong>Pizza Name:</strong>
+                <select name="pizza_id" class="form-control">
+                    @foreach($pizzas as $pizza)                            
+                        <option value="{{ $pizza->id }}">{{$pizza->pizza_name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Number:</strong>
-                <input type="text" name="pizzaNumber" class="form-control" placeholder="Number of Pizza">
+                <strong>Number of Pizza:</strong>
+                <input type="text" name="number_of_pizza" class="form-control" placeholder="Number of Pizza">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                <input type="text" name="pizzaSize" class="form-control" placeholder="Size of Pizza">
+                <select name="pizza_size" class="form-control">
+                    @foreach($pizzas as $pizza)                            
+                        <option>{{$pizza->pizza_size}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Status:</strong>
-            <label>
-                {{ App\Enums\Status::DELEVIRY }}
-                <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::DELEVIRY }}">
-            </label>
-            <label>
-                {{ App\Enums\Status::DISPATCHED }}
-                <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::DISPATCHED }}">
-            </label>
-            <label>
-                {{ App\Enums\Status::CANCELED }}
-                <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::CANCELED }}">
-            </label>
-    </div>
+                <label>
+                    {{ App\Enums\Status::DELEVIRY }}
+                    <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::DELEVIRY }}">
+                </label>
+                <label>
+                    {{ App\Enums\Status::DISPATCHED }}
+                    <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::DISPATCHED }}">
+                </label>
+                <label>
+                    {{ App\Enums\Status::CANCELED }}
+                    <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::CANCELED }}">
+                </label>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza email:</strong>
                 <input type="text" name="email" class="form-control" placeholder="email">
@@ -89,7 +92,7 @@
                 <strong>Customer Address:</strong>
                 <input type="text" name="customerAddress" class="form-control" placeholder="Customer Address">
             </div>
-        </div>
+        </div> --}}
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

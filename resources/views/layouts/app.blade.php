@@ -11,10 +11,10 @@
     
 </div>
    
-    <script src="/frontend/js/jquery.js" ></script>
-    <script src="/frontend/js/popper.js"></script>
-    <script src="/frontend/js/bootstrap.min.js"></script>
-    <script src="/frontend/js/jquery-1.11.1.min.js"></script>
+    <script src={{ asset("public/frontend/js/jquery.js") }} ></script>
+    <script src={{ asset("public/frontend/js/popper.js") }} ></script>
+    <script src={{ asset("public/frontend/js/bootstrap.min.js") }} ></script>
+    <script src={{ asset("public/frontend/js/jquery-1.11.1.min.js") }} ></script>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <!------ Include the above in your HEAD tag ---------->

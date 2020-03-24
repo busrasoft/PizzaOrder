@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PizzaOrder;
 use Illuminate\Http\Request;
 use App\Pizza;
+use Illuminate\Support\Facades\Auth;
 
 class PizzaOrderController extends Controller
 {
@@ -49,17 +50,15 @@ class PizzaOrderController extends Controller
      */
     public function store(Request $request)
     {
+        // $id = Auth::id();
         $request->validate([
-            'pizzaFlavor' => 'required',
-            'pizzaNumber' => 'required',
-            'pizzaSize' => 'required',
+            'pizza_id' => 'required',
+            'number_of_pizza' => 'required',
+            'pizza_size' => 'required',
             'status' => 'required',
-            'email' => 'required',
-            'customerName' => 'required',
-            'customerPhone' => 'required',
-            'customerAddress' => 'required',
         ]);
-
+        $request['user_id'] = Auth::id();  // adding current authenticated user
+        
         PizzaOrder::create($request->all());
         return redirect()->route('pizzaOrders.index')
         ->with('success','Pizza order created successfully.');
@@ -98,8 +97,8 @@ class PizzaOrderController extends Controller
     {
         $request->validate([
             'pizzaFlavor' => 'required',
-            'pizzaNumber' => 'required',
-            'pizzaSize' => 'required',
+            'number_of_pizza' => 'required',
+            'pizza_size' => 'required',
             'status' => 'required',
             'email' => 'required',
             'customerName' => 'required',

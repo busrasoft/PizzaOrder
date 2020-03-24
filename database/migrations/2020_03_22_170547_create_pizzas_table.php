@@ -15,9 +15,9 @@ class CreatePizzasTable extends Migration
     {
         Schema::create('pizzas', function (Blueprint $table) {
             $table->id();
-            $table->string('pizzaFlavor');
-            $table->integer('pizzaNumber');
-            $table->string('pizzaSize');
+            $table->string('pizza_name');
+            $table->string('pizza_flavor');
+            $table->string('pizza_size');
             $table->timestamps();
         });
     }

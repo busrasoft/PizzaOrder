@@ -25,24 +25,23 @@
    
 <form action="{{ route('pizzas.store') }}" method="POST">
     @csrf
-  
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Flavor:</strong>
-                <input type="text" name="pizzaFlavor" class="form-control" placeholder="pizzaFlavor">
+                <strong>Pizza Name:</strong>
+                <input type="text" name="pizza_name" class="form-control" placeholder="Pizza Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Number:</strong>
-                <input type="text" name="pizzaNumber" class="form-control" placeholder="Number of Pizza">
+                <strong>Pizza Flavor:</strong>
+                <input type="text" name="pizza_flavor" class="form-control" placeholder="Pizza of Flavor">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                <select name="pizzaSize" class="form-control">
+                <select name="pizza_size" class="form-control">
                     @foreach ($pizzaSizes as $pizzaSize)
                         <option value="{{ $pizzaSize->pizzaSize }}">{{ $pizzaSize->pizzaSize}}</option>
                     @endforeach

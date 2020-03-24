@@ -30,20 +30,20 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Pizza Flavor:</strong>
-                    <input type="text" name="pizzaFlavor" value="{{ $pizza->pizzaFlavor }}" class="form-control" placeholder="Pizza Flavor">
+                    <strong>Pizza Name:</strong>
+                    <input type="text" name="pizza_name" value="{{ $pizza->pizza_name }}" class="form-control" placeholder="Pizza Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Pizza Number:</strong>
-                    <input type="text" name="pizzaNumber" value="{{ $pizza->pizzaNumber }}" class="form-control" placeholder="Pizza Number">
+                    <strong>Pizza Flavor:</strong>
+                    <input type="text" name="pizza_flavor" value="{{ $pizza->pizza_flavor }}" class="form-control" placeholder="Pizza Flavor">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Size:</strong>
-                    <input type="text" name="pizzaSize" value="{{ $pizza->pizzaSize }}" class="form-control" placeholder="Pizza Size">
+                    <input type="text" name="pizza_size" value="{{ $pizza->pizza_size }}" class="form-control" placeholder="Pizza Size">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

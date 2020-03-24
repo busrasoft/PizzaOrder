@@ -15,16 +15,11 @@ class CreatePizzaOrdersTable extends Migration
     {
         Schema::create('pizza_orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pizza_id')->constrain()->nullable();
-            $table->foreignId('user_id')->constrain()->nullable();
-            $table->string('pizzaFlavor')->nullable();
-            $table->integer('pizzaNumber')->nullable();
-            $table->string('pizzaSize')->nullable();
-            $table->string('status')->nullable();
-            $table->string('email')->nullable();
-            $table->string('customerName')->nullable();
-            $table->string('customerPhone')->nullable();
-            $table->string('customerAddress')->nullable();
+            $table->foreignId('pizza_id')->constrain();
+            $table->foreignId('user_id')->constrain();
+            $table->integer('number_of_pizza')->nullable();
+            $table->string('pizza_size')->nullable();
+            $table->string('status')->nullable();           
             $table->timestamps();
         });
     }

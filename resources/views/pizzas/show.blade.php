@@ -14,20 +14,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Flavor:</strong>
-                {{ $pizza->pizzaFlavor }}
+                <strong>Pizza Name:</strong>
+                {{ $pizza->pizza_name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Number:</strong>
-                {{ $pizza->pizzaNumber }}
+                <strong>Pizza Flavor:</strong>
+                {{ $pizza->pizza_flavor }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                {{ $pizza->pizzaSize }}
+                {{ $pizza->pizza_size }}
             </div>
         </div>
     </div>
