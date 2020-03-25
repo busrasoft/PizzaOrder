@@ -83,7 +83,8 @@ class PizzaController extends Controller
      */
     public function edit(Pizza $pizza)
     {
-        return view('pizzas.edit',compact('pizza'));
+        $pizzaSizes = PizzaSize::get();
+        return view('pizzas.edit',compact('pizza', 'pizzaSizes'));
     }
 
     /**
