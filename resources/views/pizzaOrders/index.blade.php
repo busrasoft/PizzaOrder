@@ -32,16 +32,17 @@
             <th width="280px">Action</th>
         </tr>
         @foreach ($pizzaOrders as $pizza)
+        
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $pizza->pizzaFlavor }}</td>
-            <td>{{ $pizza->pizzaNumber }}</td>
-            <td>{{ $pizza->pizzaSize }}</td>
+            <td>{{ $pizza->pizza->pizza_flavor }}</td>
+            <td>{{ $pizza->number_of_pizza }}</td>
+            <td>{{ $pizza->pizza_size }}</td>
             <td>{{ $pizza->status }}</td>
-            <td>{{ $pizza->email }}</td>
-            <td>{{ $pizza->customerName }}</td>
-            <td>{{ $pizza->customerPhone }}</td>
-            <td>{{ $pizza->customerAddress }}</td>
+            <td>{{ $pizza->user->email }}</td>
+            <td>{{ $pizza->user->name }}</td>
+            <td>{{ $pizza->user->phone }}</td>
+            <td>{{ $pizza->user->address }}</td>
             <td>
                 <form action="{{ route('pizzaOrders.destroy',$pizza->id) }}" method="POST">
    

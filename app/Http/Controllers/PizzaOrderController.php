@@ -25,7 +25,7 @@ class PizzaOrderController extends Controller
      */
     public function index()
     {
-        $pizzaOrders = PizzaOrder::paginate(5);
+        $pizzaOrders = PizzaOrder::with(['user', 'pizza'])->paginate(5);
         return view('pizzaOrders.index',compact('pizzaOrders'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
