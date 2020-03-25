@@ -30,50 +30,53 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Pizza Flavor:</strong>
-                    <input type="text" name="pizzaFlavor" value="{{ $pizzaOrder->pizzaFlavor }}" class="form-control" placeholder="Pizza Flavor">
+                    <strong>Pizza of Name:</strong>
+                    <select name="pizza_id" class="form-control">
+                        @foreach($pizzas as $pizza) 
+                            <option value="{{ $pizza->id }}">{{$pizza->pizza_name}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Number:</strong>
-                    <input type="text" name="pizzaNumber" value="{{ $pizzaOrder->pizzaNumber }}" class="form-control" placeholder="Pizza Number">
+                    <input type="text" name="number_of_pizza" value="{{ $pizzaOrder->number_of_pizza }}" class="form-control" placeholder="Pizza Number">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Size:</strong>
-                    <input type="text" name="pizzaSize" value="{{ $pizzaOrder->pizzaSize }}" class="form-control" placeholder="Pizza Size">
+                    <select name="pizza_size" class="form-control">
+                        @foreach($pizzas as $pizza) 
+                            <option value="{{ $pizza->id }}">{{$pizza->pizza_size}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Pizza Status:</strong>
-                    <input type="text" name="status" value="{{ $pizzaOrder->status }}" class="form-control" placeholder="status">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>email:</strong>
-                    <input type="text" name="email" value="{{ $pizzaOrder->email }}" class="form-control" placeholder="email">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Customer Name:</strong>
-                    <input type="text" name="customerName" value="{{ $pizzaOrder->customerName }}" class="form-control" placeholder="Customer Name">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Customer Phone:</strong>
-                    <input type="text" name="customerPhone" value="{{ $pizzaOrder->customerPhone }}" class="form-control" placeholder="customer Phone">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Customer Address:</strong>
-                    <input type="text" name="customerAddress" value="{{ $pizzaOrder->customerAddress }}" class="form-control" placeholder="customer Address">
+                    <label>
+                        {{ App\Enums\Status::DELEVIRY }}
+                        <input type="radio" name="status"
+                        class="form-control" value="{{ App\Enums\Status::DELEVIRY }}"
+                        {{ old('status', $pizzaOrder->status) == App\Enums\Status::DELEVIRY ? 'checked' : '' }}>
+                    </label>
+                    <label>
+                        {{ App\Enums\Status::DISPATCHED }}
+                        <input type="radio" name="status" 
+                        class="form-control" 
+                        value="{{ App\Enums\Status::DISPATCHED }}"
+                        {{ old('status', $pizzaOrder->status) == App\Enums\Status::DISPATCHED ? 'checked' : '' }}
+                        >
+                    </label>
+                    <label>
+                        {{ App\Enums\Status::CANCELED }}
+                        <input type="radio" name="status" class="form-control" value="{{ App\Enums\Status::CANCELED }}"
+                        {{ old('status', $pizzaOrder->status) == App\Enums\Status::CANCELED ? 'checked' : '' }}
+                        >
+                    </label>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

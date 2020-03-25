@@ -83,7 +83,8 @@ class PizzaOrderController extends Controller
      */
     public function edit(PizzaOrder $pizzaOrder)
     {
-        return view('pizzaOrders.edit',compact('pizzaOrder'));
+        $pizzas = Pizza::get();
+        return view('pizzaOrders.edit',compact('pizzaOrder', 'pizzas'));
     }
 
     /**
@@ -96,20 +97,16 @@ class PizzaOrderController extends Controller
     public function update(Request $request, PizzaOrder $pizzaOrder)
     {
         $request->validate([
-            'pizzaFlavor' => 'required',
+            'pizza_id' => 'required',
             'number_of_pizza' => 'required',
             'pizza_size' => 'required',
             'status' => 'required',
-            'email' => 'required',
-            'customerName' => 'required',
-            'customerPhone' => 'required',
-            'customerAddress' => 'required',
-        ]);
-
+        ]); 
+        $request['user_id'] = Auth::id(); 
         $pizzaOrder->update($request->all());
         return redirect()->route('pizzaOrders.index')
         ->with('success','Pizza order created successfully.');
-    }
+        }
 
     /**
      * Remove the specified resource from storage.

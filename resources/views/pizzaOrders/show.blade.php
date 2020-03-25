@@ -14,19 +14,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Flavor:</strong>
-                {{ $pizzaOrder->pizzaFlavor }}
+                {{ $pizzaOrder->pizza->pizza_flavor }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Number:</strong>
-                {{ $pizzaOrder->pizzaNumber }}
+                {{ $pizzaOrder->number_of_pizza }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pizza Size:</strong>
-                {{ $pizzaOrder->pizzaSize }}
+                {{ $pizzaOrder->pizza_size }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -38,25 +38,25 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email:</strong>
-                {{ $pizzaOrder->email }}
+                {{ $pizzaOrder->user->email }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Customer Name:</strong>
-                {{ $pizzaOrder->customerName }}
+                {{ $pizzaOrder->user->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Customer Phone:</strong>
-                {{ $pizzaOrder->customerPhone }}
+                {{ $pizzaOrder->user->phone }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Customer Address:</strong>
-                {{ $pizzaOrder->customerAddress }}
+                {{ $pizzaOrder->user->address }}
             </div>
         </div>
     </div>

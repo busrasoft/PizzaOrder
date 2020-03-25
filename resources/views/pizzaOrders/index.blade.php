@@ -32,7 +32,6 @@
             <th width="280px">Action</th>
         </tr>
         @foreach ($pizzaOrders as $pizza)
-        
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $pizza->pizza->pizza_flavor }}</td>
