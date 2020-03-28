@@ -7,7 +7,7 @@
                 <h2>Edit Pizza</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('pizzas.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('pizzas.index') }}" style="float:right;"> Back</a>
             </div>
         </div>
     </div>
@@ -44,11 +44,7 @@
                 <div class="form-group">
                     <strong>Pizza Size:</strong>
                     <input type="text" name="pizza_size" value="{{ $pizza->pizza_size }}" class="form-control" placeholder="Pizza Size">
-                    <select name="pizza_size" class="form-control">
-                        @foreach($pizzaSizes as $pizza) 
-                            <option value="{{ $pizza->id }}">{{$pizza->pizzaSize}}</option>
-                        @endforeach
-                    </select>
+                   
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

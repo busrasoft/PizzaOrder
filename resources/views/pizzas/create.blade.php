@@ -40,12 +40,9 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Pizza Size:</strong>
-                <select name="pizza_size" class="form-control">
-                    @foreach ($pizzaSizes as $pizzaSize)
-                        <option value="{{ $pizzaSize->pizzaSize }}">{{ $pizzaSize->pizzaSize}}</option>
-                    @endforeach
-                </select>
+                    <strong>Pizza Size:</strong>
+                    <input type="text" name="pizza_size" class="form-control" placeholder="Pizza of Size">
+                </div>
             </div>
             <!-- Example single danger button -->
 

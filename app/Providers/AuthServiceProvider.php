@@ -25,6 +25,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('pizzas', function ($user) {
+            if ($user->admin_auth == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        });
     }
 }
