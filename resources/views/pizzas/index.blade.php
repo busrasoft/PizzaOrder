@@ -19,6 +19,8 @@
     @endif
    
     <table class="table table-bordered">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+
         <tr>
             <th>No</th>
             <th>Pizza Flavor</th>
